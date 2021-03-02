@@ -3,16 +3,30 @@ package sk.stuba.fei.uim.oop;
 
 public class Student implements Comparable<Student>{
     private int id;
-    String firstName;
+    private String firstName;
     private String lastName;
     private int age;
 
-    public Student(){
-
-    }
+    public Student(){}
 
     public Student(int id, String firstName, String lastName, int age){
         initializeStudent(id,firstName,lastName,age);
+    }
+
+    public int getId(){
+        return this.id;
+    }
+
+    public String getFirstName(){
+        return this.firstName;
+    }
+
+    public String getLastName(){
+        return this.lastName;
+    }
+
+    public int getAge(){
+        return this.age;
     }
 
     public void initializeStudent(int id, String firstName, String lastName, int age){
@@ -24,7 +38,8 @@ public class Student implements Comparable<Student>{
 
     public void printStudentInfo(){
         System.out.println("Krstne meno : " + this.firstName + "\n" + "Priezvisko : "
-                            + this.lastName + "\n" + "ID : " + this.id + "\n" + "Vek : " + this.age + "\n------------------");
+                            + this.lastName + "\n" + "ID : " + this.id + "\n" + "Vek : " + this.age
+                            + "\n------------------");
     }
 
     @Override
