@@ -1,6 +1,8 @@
 package sk.stuba.fei.uim.oop;
 
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
@@ -22,8 +24,7 @@ public class Main {
         listOfStudents[3] = s4;
 
         printAllStudents(listOfStudents);
-        System.out.println("xxxxxxxxxxxxxxxxxx");
-        Arrays.sort(listOfStudents,Student::compareTo);
+        sortingDirection(listOfStudents);
         printAllStudents(listOfStudents);
         }
 
@@ -32,5 +33,29 @@ public class Main {
                 listOfStudent.printStudentInfo();
             }
         }
+
+        public static void sortingDirection(Student[] listOfStudents){
+            Scanner number = new Scanner(System.in);
+            System.out.println("Press 1 for ascending sort. \nPress 2 for descending sort. \n");
+            int choice = number.nextInt();
+            switch (choice){
+                case 1:
+                    ascendSort(listOfStudents);
+                    break;
+                case 2:
+                    descendSort(listOfStudents);
+                default:
+                    System.out.println("Wrong number!");
+            }
+        }
+
+    public static void descendSort(Student[] listOfStudents){
+        Arrays.sort(listOfStudents, Collections.reverseOrder(Student::compareTo));
+    }
+
+    public static void ascendSort(Student[] listOfStudents){
+        Arrays.sort(listOfStudents,Student::compareTo);
+    }
+
 }
 

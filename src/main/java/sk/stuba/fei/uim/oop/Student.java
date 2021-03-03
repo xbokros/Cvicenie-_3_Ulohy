@@ -1,6 +1,5 @@
 package sk.stuba.fei.uim.oop;
 
-
 public class Student implements Comparable<Student>{
     private int id;
     private String firstName;
